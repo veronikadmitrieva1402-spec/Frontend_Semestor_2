@@ -1,0 +1,54 @@
+$primary-color: #283352;
+$secondary-color: #434859;
+$font-main: 'Arial', sans-serif;
+
+@mixin button($color) {
+    padding: 10px 14px;
+    background: $color;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background: darken($color, 10%);
+    }
+}
+
+
+.product-card {
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    font-family: $font-main;
+    
+
+    &_image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    &_title {
+        color: $primary-color;
+        margin: 0 0 10px 0;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    &_description {
+        color: $secondary-color;
+        margin: 0 0 15px 0;
+        line-height: 1.5;
+        text-align: center
+    }
+
+    &_button {
+        @include button($primary-color);
+        width: 100%;
+
+        &:hover {
+            background: darken($primary-color, 10%);
+        }
+    }
+}
